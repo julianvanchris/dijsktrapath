@@ -108,7 +108,7 @@ function App() {
       stopNodes: stopNodes.map(stop => stop.id), // Send stop nodes to backend
     };
 
-    axios.post('http://localhost:5000/calculate-path', data)
+    axios.post('http://192.168.1.30:5000/calculate-path', data)
       .then((response) => {
         setShortestPath(response.data.path);  // Set the shortest path from backend
         setAnimationStep(0);  // Reset animation step
