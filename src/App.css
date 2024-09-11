@@ -1,38 +1,132 @@
-.App {
-  text-align: center;
+/* General Reset */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #121212; /* Dark background */
+  color: #e0e0e0; /* Light grey text */
+  overflow: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  padding: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Sidebar Layout */
+.sidebar {
+  width: 250px;
+  background-color: #1E1E1E;
+  padding: 15px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: flex-start;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  overflow-y: auto;
+  border-right: 2px solid #00FFFF;
 }
 
-.App-link {
-  color: #61dafb;
+/* Buttons Container */
+.button-container {
+  display: flex;
+  flex-wrap: wrap; /* Allows buttons to wrap if needed */
+  gap: 10px; /* Space between buttons */
+  width: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Buttons */
+button {
+  background-color: transparent;
+  border: 2px solid #00FFFF; /* Neon cyan border */
+  border-radius: 8px;
+  color: #00FFFF; /* Neon cyan text */
+  padding: 10px 20px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.3), inset 0px 0px 10px rgba(0, 255, 255, 0.6); /* Neon glow */
+}
+
+button:hover {
+  background-color: #00FFFF; /* Neon cyan background */
+  color: #121212; /* Dark text on hover */
+  box-shadow: 0px 0px 25px rgba(0, 255, 255, 0.7), inset 0px 0px 15px rgba(0, 255, 255, 0.9);
+}
+
+/* Input File Button */
+input[type="file"] {
+  color: #00FFFF;
+  margin: 5px 0;
+  padding: 5px;
+}
+
+/* Grid and Layout */
+input[type="number"] {
+  background-color: #1E1E1E;
+  color: #00FFFF;
+  border: 1px solid #00FFFF;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 5px;
+  width: 218px;
+}
+
+/* Container for the Canvas */
+#canvas {
+  border: 2px solid #00FFFF; /* Outline of the canvas */
+  box-shadow: 0 0 20px #00FFFF;
+}
+
+/* Path & Node Styling */
+.konvajs-content {
+  background-color: #7e7e7e60;
+}
+
+.Circle {
+  fill: #00FFFF;
+  stroke: #00FFFF;
+  stroke-width: 3;
+}
+
+.Line {
+  stroke: #FFF;
+  stroke-width: 2;
+}
+
+.Line.animated {
+  stroke: #FF5722;
+  stroke-width: 4;
+  stroke-dasharray: 10 5;
+}
+
+/* Add subtle hover animation on circles */
+.Circle:hover {
+  fill: #FF5722; /* Hover color */
+  cursor: pointer;
+  transition: fill 0.3s ease;
+}
+
+/* Text */
+.Text {
+  fill: #e0e0e0;
+  font-size: 14px;
+  font-family: 'Orbitron', sans-serif;
+}
+
+/* Scroll bar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #2E2E2E;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #00FFFF;
+  border-radius: 4px;
 }
